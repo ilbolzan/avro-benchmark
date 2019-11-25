@@ -11,9 +11,9 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 
-public class AvroSerializer {
+public class AvroFatSerializer {
 
-    private static Logger log = LoggerFactory.getLogger(AvroSerializer.class);
+    private static Logger log = LoggerFactory.getLogger(AvroFatSerializer.class);
     private static StopWatch stopWatch = new StopWatch();
 
     public static StopWatch serialize() throws IOException {
@@ -32,13 +32,13 @@ public class AvroSerializer {
         stopWatch.start();
 
 
-        dataFileWriter.create(user.getSchema(), new File("users.avro"));
+        dataFileWriter.create(user.getSchema(), new File("output/users.avro"));
         dataFileWriter.append(user);
         dataFileWriter.close();
 
         stopWatch.stop();
 
-        log.info("Avro - Serializing: {}", stopWatch.getNanoTime());
+        log.info("AvroFat - Serializing: {}", stopWatch.getNanoTime());
 
         return stopWatch;
 

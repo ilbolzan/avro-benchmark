@@ -11,9 +11,9 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 
-public class AvroDeserializer {
+public class AvroFatDeserializer {
 
-    private static Logger log = LoggerFactory.getLogger(AvroDeserializer.class);
+    private static Logger log = LoggerFactory.getLogger(AvroFatDeserializer.class);
     private static StopWatch stopWatch = new StopWatch();
 
     public static StopWatch deserialize() throws IOException {
@@ -22,14 +22,14 @@ public class AvroDeserializer {
         stopWatch.start();
 
         DatumReader<User> userDatumReader = new SpecificDatumReader<User>(User.class);
-        DataFileReader<User> dataFileReader = new DataFileReader<User>(new File("users.avro"), userDatumReader);
+        DataFileReader<User> dataFileReader = new DataFileReader<User>(new File("output/users.avro"), userDatumReader);
         User user = null;
         dataFileReader.hasNext();
         user = dataFileReader.next(user);
 
         stopWatch.stop();
 
-        log.info("Avro - deserializing: {}", stopWatch.getNanoTime());
+        log.info("AvroFat - deserializing: {}", stopWatch.getNanoTime());
 
         return stopWatch;
 

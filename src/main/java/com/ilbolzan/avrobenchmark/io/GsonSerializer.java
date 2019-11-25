@@ -27,7 +27,7 @@ public class GsonSerializer {
         stopWatch.reset();
         stopWatch.start();
 
-        Writer writer = new FileWriter("userGson.json");
+        Writer writer = new FileWriter("output/userGson.json");
         gson.toJson(user, writer);
         writer.flush();
 

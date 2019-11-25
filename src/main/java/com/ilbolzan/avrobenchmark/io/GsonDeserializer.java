@@ -24,7 +24,7 @@ public class GsonDeserializer {
         stopWatch.reset();
         stopWatch.start();
 
-        User user = gson.fromJson(new FileReader("userGson.json"), User.class);
+        User user = gson.fromJson(new FileReader("output/userGson.json"), User.class);
 
         stopWatch.stop();
 

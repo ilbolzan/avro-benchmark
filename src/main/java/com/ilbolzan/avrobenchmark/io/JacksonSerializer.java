@@ -24,7 +24,7 @@ public class JacksonSerializer {
         stopWatch.reset();
         stopWatch.start();
 
-        objectMapper.writeValue(new File("userJackson.json"), user);
+        objectMapper.writeValue(new File("output/userJackson.json"), user);
 
         stopWatch.stop();
 

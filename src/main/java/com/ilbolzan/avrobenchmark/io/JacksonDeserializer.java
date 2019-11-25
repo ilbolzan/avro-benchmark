@@ -22,7 +22,7 @@ public class JacksonDeserializer {
         stopWatch.reset();
         stopWatch.start();
 
-        User user = objectMapper.readValue(new File("userJackson.json"), User.class);
+        User user = objectMapper.readValue(new File("output/userJackson.json"), User.class);
 
         stopWatch.stop();
 

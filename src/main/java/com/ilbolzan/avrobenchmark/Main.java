@@ -16,8 +16,8 @@ public class Main {
             GsonSerializer.serialize();
             GsonDeserializer.deserialize();
 
-            AvroSerializer.serialize();
-            AvroDeserializer.deserialize();
+            AvroFatSerializer.serialize();
+            AvroFatDeserializer.deserialize();
 
 
         } catch (Exception e) {
