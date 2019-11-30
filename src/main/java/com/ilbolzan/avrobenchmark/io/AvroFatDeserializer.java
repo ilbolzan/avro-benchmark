@@ -29,7 +29,7 @@ public class AvroFatDeserializer {
 
         stopWatch.stop();
 
-        log.info("AvroFat - deserializing: {}", stopWatch.getNanoTime());
+//        log.info("AvroFat - deserializing: {}", stopWatch.getNanoTime()/ 1000);
 
         return stopWatch;
 

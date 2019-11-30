@@ -26,7 +26,7 @@ public class JacksonDeserializer {
 
         stopWatch.stop();
 
-        log.info("Jackson - deserializing: {}", stopWatch.getNanoTime());
+//        log.info("Jackson - deserializing: {}", stopWatch.getNanoTime()/ 1000);
 
         return stopWatch;
 
